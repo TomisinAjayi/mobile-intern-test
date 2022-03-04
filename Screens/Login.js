@@ -3,15 +3,15 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Formik } from 'formik';
 import {
+    Colors,
     StyledContainer,
     InnerContainer,
     Header,
     PageTitle,
-    SubTitle,
     StyledFormArea,
-    RightIcon,
+    SubTitle,
     StyledTextInput,
-    Colors,
+    RightIcon,
     MsgBox,
     ErrorText,
     CheckboxContainer,
@@ -61,13 +61,12 @@ const Login = ({navigation}) => {
                         } else if (!EmailValidator.validate(values.email)) {
                           errors.email = "Invalid email address.";
                         }
-                    
                         if (!values.password) {
                           errors.password = "Password Required";
                         }                     
                         return errors;
-                      }}
-                >{({ handleBlur, handleChange, errors, touched, isSubmitting, values }) => 
+                    }}
+                >{({ handleBlur, handleChange, handleSubmit, errors, touched, isSubmitting, values }) => 
                 (<StyledFormArea>
                     <SubTitle>Sign in</SubTitle>
                     <MyTextInput 
@@ -114,7 +113,7 @@ const Login = ({navigation}) => {
                         <CheckboxLabel>Remember me</CheckboxLabel>
                     </CheckboxContainer>
                     <StyledButton disabled={isSubmitting}>
-                        <ButtonText onPress={() => navigation.navigate('Success')}>
+                        <ButtonText onPress={ handleSubmit } onPress={() => navigation.navigate('Success')}>
                             SIGN IN
                         </ButtonText>
                     </StyledButton>
@@ -153,7 +152,7 @@ const MyTextInput = ({ isPassword, hidePassword, setHidePassword, ...props }) =>
                 </RightIcon>
             )}
         </View>
-    )
+    );
 }
 const MyCheckBox = ({ checked, onChange, activeIconProps, inactiveIconProps }) => {
     const iconProps = checked ? activeIconProps : inactiveIconProps;
@@ -166,7 +165,5 @@ const MyCheckBox = ({ checked, onChange, activeIconProps, inactiveIconProps }) =
         </Pressable>
     );
 }
-
-
 
 export default Login;

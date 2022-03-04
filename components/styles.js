@@ -78,15 +78,14 @@ export const RightIcon = styled.TouchableOpacity`
 `;
 
 export const MsgBox = styled.View`
-
+    width: 90%;
+    margin: 0 auto 5px;
 `;
 
 export const ErrorText = styled.Text`
     color: ${red};
     font-size: 11px;
     font-weight: bold;
-    width: 90%;
-    margin: 0 auto 5px;
 `;
 
 export const CheckboxContainer = styled.View`
