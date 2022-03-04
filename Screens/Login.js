@@ -149,7 +149,7 @@ const MyTextInput = ({ isPassword, hidePassword, setHidePassword, ...props }) =>
             <StyledTextInput { ...props } />
             {isPassword && (
                 <RightIcon onPress={() => setHidePassword(!hidePassword)}>
-                    <Ionicons name={ hidePassword ? 'md-eye' : 'md-eye-off' } size={30} color={ white } />
+                    <Ionicons name={ hidePassword ? 'eye-outline' : 'eye-off-outline' } size={30} color={ white } />
                 </RightIcon>
             )}
         </View>
