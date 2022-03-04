@@ -16,6 +16,7 @@ import {
     ErrorText,
     CheckboxContainer,
     CheckboxLabel,
+    CheckboxDesign,
     StyledButton,
     ButtonText,
     ForgotPassword,
@@ -157,12 +158,11 @@ const MyTextInput = ({ isPassword, hidePassword, setHidePassword, ...props }) =>
 const MyCheckBox = ({ checked, onChange, activeIconProps, inactiveIconProps }) => {
     const iconProps = checked ? activeIconProps : inactiveIconProps;
     return (
-        <Pressable
-            style={ {backgroundColor: checked ? "white" : "white" }}
+        <CheckboxDesign
             onPress={() => onChange(!checked)}>
             {checked && <Ionicons name="checkmark" size={24} color={ black } { ...iconProps} />}
-
-        </Pressable>
+            {!checked && <Ionicons size={24} color={ black } { ...iconProps} />}
+        </CheckboxDesign>
     );
 }
 

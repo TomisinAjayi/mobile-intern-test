@@ -101,6 +101,13 @@ export const CheckboxLabel = styled.Text`
     color: ${white};
 `;
 
+export const CheckboxDesign = styled.TouchableOpacity`
+    background-color: ${ white };
+    width: 24;
+    border-radius: 4px;
+    border-color: black;
+`;
+
 export const StyledButton = styled.TouchableOpacity`
     padding: 15px;
     background-color: ${white};
