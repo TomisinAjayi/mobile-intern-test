@@ -7,6 +7,7 @@ import {
     StyledContainer,
     InnerContainer,
     Header,
+    EllipseDesign,
     PageTitle,
     StyledFormArea,
     SubTitle,
@@ -44,7 +45,7 @@ const Login = ({navigation}) => {
             <StatusBar style='dark' />
             <InnerContainer>
                 <Header>
-                    <PageTitle onPress={() => navigation.navigate('Login')}>moneyrise</PageTitle>
+                    <PageTitle onPress={() => navigation.navigate('Login')}>moneyrise<EllipseDesign><Ellipse /></EllipseDesign></PageTitle>
                     <HamburgerIcon />
                 </Header>
                 <Formik
@@ -135,6 +136,11 @@ const Login = ({navigation}) => {
     );
 };
 
+const Ellipse = () => {
+    return (
+        <Ionicons name="ellipse" size={10} color={ white } />
+    );
+}
 const HamburgerIcon = () => {
     return (
         <TouchableOpacity>

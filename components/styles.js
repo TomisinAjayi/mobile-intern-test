@@ -34,7 +34,9 @@ export const Header = styled.View`
     justify-content: space-between;
     align-items: center;
 `;
-
+export const EllipseDesign = styled.TouchableOpacity`
+   margin-top: 4%;
+`;
 export const PageTitle = styled.Text`
     font-size: 30px;
     font-weight: bold;
